@@ -46,7 +46,7 @@
     "typescript": "^2.9.2"
   },
   "dependencies": {
-    "superagent": "^3.5.2"
+    "superagent": "^4.0.0"
   },
   "pre-commit": [
     "lint"
