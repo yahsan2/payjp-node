@@ -1,6 +1,6 @@
 /* global Buffer */
 
-import * as superagent from 'superagent';
+import axios, { AxiosRequestConfig } from 'axios'
 
 export default class Requestor {
   apikey: string;
@@ -38,27 +38,15 @@ export default class Requestor {
     const header = Object.assign(fixed_header, headers);
 
     return new Promise((resolve, reject): any => {
-
-      let request = superagent(method, url).set(header);
-
-      if (method === 'GET' || method === 'DELETE') {
-        request.query(query);
-      } else if (method === 'POST' || method === 'PUT') {
-        request.send(query);
-      }
-
-      if (this.config.cert !== null) {
-        request.ca(this.config.cert);
-      }
-
-      request.end((err: any, res: superagent.Response) => {
-        if (res.status === 200) {
-          resolve(res.body);
-        } else {
-          reject(res);
-        }
-      });
-
+      axios.request({
+        method: method,
+        url: url,
+        headers: header
+      }).then( ({data}) =>{
+        resolve(data);
+      }).catch((error)=>{
+        reject(error);
+      })
     });
 
   }
