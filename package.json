@@ -15,7 +15,7 @@
     "build": "tsc",
     "lint": "./node_modules/eslint/bin/eslint.js src",
     "prepublish": "npm run build",
-    "preinstall": "npm run build"
+    "postinstall": "postinstall-build build"
   },
   "repository": {
     "type": "git",
@@ -47,6 +47,7 @@
     "typescript": "^2.9.2"
   },
   "dependencies": {
+    "postinstall-build": "^5.0.3",
     "superagent": "^4.0.0"
   },
   "pre-commit": [
