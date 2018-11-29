@@ -14,7 +14,8 @@
     "test": "npm run build && ./node_modules/.bin/mocha --compilers js:espower-babel/guess test/**/*.js",
     "build": "tsc",
     "lint": "./node_modules/eslint/bin/eslint.js src",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "preinstall": "npm run build"
   },
   "repository": {
     "type": "git",
