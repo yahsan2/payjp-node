@@ -31,7 +31,7 @@
     "npm": "2.x || 3.x"
   },
   "devDependencies": {
-    "@types/superagent": "^3.8.0",
+    "@types/superagent": "^3.8.4",
     "babel-cli": "^6.4.5",
     "babel-core": "^6.4.5",
     "babel-eslint": "^7.2.3",
